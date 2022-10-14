@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="P1.css">
+    <style>
+        #button-1 {
+            margin: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div align = "center">
+        <h1>Pressure Tranducer</h1>
+        <div id = "button"></div>
+        <button id="button-1" button onclick="showMessage1()">pressure Tranducer1</button>
+        <button id="button-1" button onclick="showMessage2()">pressure Tranducer2</button>
+        <button id="button-1" button onclick="showMessage3()">pressure Tranducer3</button>
+        <br>
+        <button id="button-1" onclick="location.href='HOME.html'">HOME</button>    
+    </div>       
+            <script>
+                    function showMessage1(data){                        
+                        fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=pressure-transducer')
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                                const name_2pressure = data[0].name;
+                                const type_2pressure = data[0].type;
+                                const unit_2pressure = data[0].unit;
+                                const range_2pressure = data[0].range;
+                                const plantsite_2pressure = data[0]["plant-site"];
+                                const value_2pressure = data[0].value;
+                            Swal.fire({html: `<h3>Name : ${name_2pressure}</h3>
+                                             <h3>Type : ${type_2pressure}</h3>
+                                             <h3>Unit : ${unit_2pressure}</h3>
+                                             <h3>Range : ${range_2pressure}</h3>
+                                             <h3>Plantsite : ${plantsite_2pressure}</h3>
+                                             <h3>Value : ${value_2pressure}</h3>`
+                                            , width: 600,
+                                                padding: '3em',
+                                                color: '#716add',
+                                                background: '#fff url(https://i.pinimg.com/564x/c5/49/2c/c5492c891efd01b4dc6769441f38e02e.jpg)',
+                                                backdrop: `
+                                                rgba(0,0,123,0.4)
+                                                url("https://i.pinimg.com/originals/aa/81/35/aa813550f3c003439580bf21223a228d.gif")
+                                                 left top
+                                                 no-repeat
+                                                    `})})}
+                    function showMessage2(data){                       
+                         fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=pressure-transducer')
+                             .then(response => response.json())
+                             .then(data => {                              
+                                const name_2pressure = data[1].name;
+                                const type_2pressure = data[1].type;
+                                const unit_2pressure = data[1].unit;
+                                const range_2pressure = data[1].range;
+                                const plantsite_2pressure = data[1]["plant-site"];
+                                const value_2pressure = data[1].value;
+                            Swal.fire({html: `<h3>Name : ${name_2pressure}</h3>
+                                             <h3>Type : ${type_2pressure}</h3>
+                                             <h3>Unit : ${unit_2pressure}</h3>
+                                             <h3>Range : ${range_2pressure}</h3>
+                                             <h3>Plantsite : ${plantsite_2pressure}</h3>
+                                             <h3>Value : ${value_2pressure}</h3>`
+                                            , width: 600,
+                                                padding: '3em',
+                                                color: '#716add',
+                                                background: '#fff url(https://i.pinimg.com/564x/c5/49/2c/c5492c891efd01b4dc6769441f38e02e.jpg)',
+                                                backdrop: `
+                                                rgba(0,0,123,0.4)
+                                                url("https://i.pinimg.com/originals/aa/81/35/aa813550f3c003439580bf21223a228d.gif")
+                                                 left top
+                                                 no-repeat
+                                                    `})                      
+                    })}
+                    function showMessage3(data){                       
+                         fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=pressure-transducer')
+                             .then(response => response.json())
+                             .then(data => {                               
+                                const name_3pressure = data[2].name;
+                                const type_3pressure = data[2].type;
+                                const unit_3pressure = data[2].unit;
+                                const range_3pressure = data[2].range;
+                                const plantsite_3pressure = data[2]["plant-site"];
+                                const value_3pressure = data[2].value;
+                            Swal.fire({html: `<h3>Name : ${name_3pressure}</h3>
+                                             <h3>Type : ${type_3pressure}</h3>
+                                             <h3>Unit : ${unit_3pressure}</h3>
+                                             <h3>Range : ${range_3pressure}</h3>
+                                             <h3>Plantsite : ${plantsite_3pressure}</h3>
+                                             <h3>Value : ${value_3pressure}</h3>`
+                                            , width: 600,
+                                                padding: '3em',
+                                                color: '#716add',
+                                                background: '#fff url(https://i.pinimg.com/564x/c5/49/2c/c5492c891efd01b4dc6769441f38e02e.jpg)',
+                                                backdrop: `
+                                                rgba(0,0,123,0.4)
+                                                url("https://i.pinimg.com/originals/aa/81/35/aa813550f3c003439580bf21223a228d.gif")
+                                                 left top
+                                                 no-repeat
+                                                    `})                         
+                    })}
+            </script>
+    </body>
+</html>
